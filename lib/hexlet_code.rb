@@ -8,7 +8,7 @@ module HexletCode
 
   class Error < StandardError; end
 
-  def self.form_for(entity, options = {})
-    Tag.build('form')
+  def self.form_for(record, options = {}, &block)
+    Tag.build('form', { action: '#', method: 'post' })
   end
 end
