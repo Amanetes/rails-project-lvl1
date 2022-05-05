@@ -3,7 +3,6 @@
 require 'test_helper'
 
 class TestHexletCode < Minitest::Test
-
   User = Struct.new(:name, :job, keyword_init: true)
 
   def test_form_for

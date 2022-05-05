@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 gemspec
 
 group :production do
-  gem 'rake', '~> 13.0'
+  gem 'rake'
 end
 
 group :development do
@@ -14,5 +14,5 @@ group :development do
 end
 
 group :test do
-  gem 'minitest', '~> 5.0'
+  gem 'minitest'
 end

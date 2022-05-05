@@ -2,7 +2,6 @@
 
 require_relative 'hexlet_code/version'
 
-
 module HexletCode
   autoload(:Tag, 'hexlet_code/tag.rb')
   autoload(:Label, 'hexlet_code/label.rb')
@@ -16,5 +15,5 @@ module HexletCode
     form = FormBuilder.new(record, options)
     yield(form) if block_given?
     form.build
-    end
+  end
 end

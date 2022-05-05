@@ -8,7 +8,7 @@ module HexletCode
       closing_tag = "</#{tag_name}>"
 
       mapping = {
-        paired: %w[div label form span p],
+        paired: %w[div label form span p textarea],
         unpaired: %w[br hr img input]
       }
       mapping[:paired].include?(tag_name) ? "#{opening_tag}#{yield if block_given?}#{closing_tag}" : opening_tag

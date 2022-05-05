@@ -3,7 +3,6 @@
 require 'test_helper'
 
 class TestHexletCode < Minitest::Test
-
   def test_paired_tags
     acutal = HexletCode::Tag.build('div')
     assert_equal('<div></div>', acutal)
