@@ -27,14 +27,6 @@ module HexletCode
                      end
     end
 
-    def textarea(attribute_name, options = {})
-      label = Label.new(attribute_name)
-      @components << label.build
-      value = @record.public_send(attribute_name)
-      textarea = TextArea.new(attribute_name, value, options)
-      @components << textarea.build(attribute_name)
-    end
-
     def submit(value = 'Save')
       @components << "\n#{Tag.build('input', name: 'commit', type: 'submit', value:)}\n"
     end
