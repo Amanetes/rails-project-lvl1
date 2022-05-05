@@ -4,7 +4,6 @@ require_relative 'hexlet_code/version'
 
 module HexletCode
   autoload(:Tag, 'hexlet_code/tag.rb')
-  autoload(:Label, 'hexlet_code/label.rb')
   autoload(:FormBuilder, 'hexlet_code/form_builder.rb')
 
   class Error < StandardError; end
