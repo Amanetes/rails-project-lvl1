@@ -16,6 +16,6 @@ class TestHexletCode < Minitest::Test
 
   def test_content_tags
     actual = HexletCode::Tag.build('label', for: 'email') { 'Email' }
-    assert_equal("<label for='email'>Email</label>", actual)
+    assert_equal('<label for="email">Email</label>', actual)
   end
 end
