@@ -1,7 +1,7 @@
 AllCops:
   NewCops: enable
   DisplayCopNames: true
-  TargetRubyVersion: 3.1
+  TargetRubyVersion: 3.0
 
 Style/Documentation:
   Enabled: false

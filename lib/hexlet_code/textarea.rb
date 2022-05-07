@@ -13,7 +13,7 @@ module HexletCode
     def build(name)
       default_options = { cols: options.fetch(:cols, '20'),
                           rows: options.fetch(:rows, '40'),
-                          name: }
+                          name: name }
       updated_options = default_options.merge(options)
       Tag.build('textarea', updated_options.except(:as)) { value }
     end

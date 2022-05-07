@@ -13,7 +13,7 @@ module HexletCode
     end
 
     def build(name)
-      Tag.build('input', name:, type: 'text', value:)
+      Tag.build('input', name: name, type: 'text', value: value)
     end
   end
 end

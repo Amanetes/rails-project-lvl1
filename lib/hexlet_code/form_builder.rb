@@ -28,7 +28,7 @@ module HexletCode
     end
 
     def submit(value = 'Save')
-      @components << "\n#{Tag.build('input', name: 'commit', type: 'submit', value:)}\n"
+      @components << "\n#{Tag.build('input', name: 'commit', type: 'submit', value: value)}\n"
     end
 
     def build
