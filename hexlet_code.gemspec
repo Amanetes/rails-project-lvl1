@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = 'Makes it easy to create forms in website templates.'
   spec.homepage = 'https://github.com/Amanetes/rails-project-lvl1'
   spec.license = 'MIT'
-  spec.required_ruby_version = '>= 3.0.2'
+  spec.required_ruby_version = '>= 3.0.1'
 
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = 'https://github.com/Amanetes/rails-project-lvl1'
