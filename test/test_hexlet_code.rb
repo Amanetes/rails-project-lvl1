@@ -15,4 +15,15 @@ class TestHexletCode < Minitest::Test
     end
     assert_equal(expected_html, actual)
   end
+
+  def test_textarea_form
+    user = User.new(name: 'rob', job: 'hexlet')
+    expected_html = File.read('test/fixtures/form.html')
+    actual = HexletCode.form_for user do |f|
+      f.input :name
+      f.input :job, as: :text
+      f.submit
+    end
+    assert_equal(expected_html, actual)
+  end
 end
