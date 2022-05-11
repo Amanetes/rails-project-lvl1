@@ -12,8 +12,8 @@ module HexletCode
       @options = options
     end
 
-    def build(name)
-      Tag.build('input', name: name, type: 'text', value: value)
+    def build
+      Tag.build('input', name: attribute_name, type: 'text', value: value)
     end
   end
 end

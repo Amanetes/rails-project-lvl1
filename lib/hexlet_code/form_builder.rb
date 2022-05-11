@@ -21,9 +21,9 @@ module HexletCode
       input = Input.new(attribute_name, value, options)
       textarea = TextArea.new(attribute_name, value, options)
       @components << if options[:as] == :text
-                       textarea.build(attribute_name)
+                       textarea.build
                      else
-                       input.build(attribute_name)
+                       input.build
                      end
     end
 
