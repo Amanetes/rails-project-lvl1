@@ -18,15 +18,12 @@ module HexletCode
       label = Label.new(attribute_name)
       @components << label.build
       value = @record.public_send(attribute_name)
-      type = options[:as] || :default
-      @components << case type
-                     when :text
-                       textarea = TextArea.new(attribute_name, value, options)
-                       textarea.build
-                     else
-                       input = Input.new(attribute_name, value, options)
-                       input.build
-                     end
+      mapping = {
+        input: -> { Input.new(attribute_name, value, options) },
+        text: -> { TextArea.new(attribute_name, value, options) }
+      }
+      type = options[:as] || :input
+      @components << mapping[type].call.build
     end
 
     def submit(value = 'Save')
