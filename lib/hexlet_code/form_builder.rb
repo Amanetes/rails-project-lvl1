@@ -18,11 +18,13 @@ module HexletCode
       label = Label.new(attribute_name)
       @components << label.build
       value = @record.public_send(attribute_name)
-      input = Input.new(attribute_name, value, options)
-      textarea = TextArea.new(attribute_name, value, options)
-      @components << if options[:as] == :text
+      type = options[:as] || :default
+      @components << case type
+                     when :text
+                       textarea = TextArea.new(attribute_name, value, options)
                        textarea.build
                      else
+                       input = Input.new(attribute_name, value, options)
                        input.build
                      end
     end
