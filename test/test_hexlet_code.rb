@@ -7,10 +7,10 @@ class TestHexletCode < Minitest::Test
 
   def test_form_for
     user = User.new(name: 'Rob', job: 'hexlet')
-    expected_html = File.read('test/fixtures/form.html')
-    actual = HexletCode.form_for(user) do |f|
+    expected_html = File.read('test/fixtures/form1.html')
+    actual = HexletCode.form_for user, url: '/users' do |f|
       f.input :name
-      f.input :job, as: :text
+      f.input :job
       f.submit
     end
     assert_equal(expected_html, actual)

@@ -32,7 +32,10 @@ module HexletCode
     end
 
     def build
-      Tag.build('form', options) { @components.join }
+      method = options.fetch(:method, 'post')
+      action = options.fetch(:url, '#')
+      other = options.except(:method, :url)
+      Tag.build('form', action: action, method: method, **other) { @components.join }
     end
   end
 end
