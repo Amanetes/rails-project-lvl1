@@ -3,7 +3,7 @@
 module HexletCode
   class Tag
     def self.build(tag_name, options = {})
-      tag_attributes = options.map { |key, value| "#{key}=\"#{value}\"" unless value.nil? }.join(' ')
+      tag_attributes = options.map { |key, value| "#{key}=\"#{value}\"" unless value.nil? }.compact.join(' ')
       opening_tag = tag_attributes.empty? ? "<#{tag_name}>" : "<#{tag_name} #{tag_attributes}>"
       closing_tag = "</#{tag_name}>"
 
