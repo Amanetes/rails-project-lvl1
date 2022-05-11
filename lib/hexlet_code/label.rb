@@ -12,7 +12,7 @@ module HexletCode
     end
 
     def build
-      "\n#{Tag.build('label', options) { options[:for].capitalize }}\n"
+      Tag.build('label', options) { options[:for].capitalize }
     end
   end
 end
