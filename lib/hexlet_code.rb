@@ -8,12 +8,14 @@ module HexletCode
   autoload(:Input, 'hexlet_code/input.rb')
   autoload(:Label, 'hexlet_code/label.rb')
   autoload(:TextArea, 'hexlet_code/textarea.rb')
+  autoload(:Form, 'hexlet_code/form.rb')
 
   class Error < StandardError; end
 
   def self.form_for(record, options = {})
-    form = FormBuilder.new(record, options)
-    yield(form) if block_given?
-    form.build
+    form = Form.new(record)
+    rendered_form = FormBuilder.new(form, record, options)
+    yield(rendered_form) if block_given?
+    rendered_form.build
   end
 end
