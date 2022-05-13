@@ -14,8 +14,7 @@ module HexletCode
 
   def self.form_for(record, options = {})
     form = Form.new(record)
-    rendered_form = FormBuilder.new(form, record, options)
-    yield(rendered_form) if block_given?
-    rendered_form.build
+    yield(form) if block_given?
+    FormBuilder.build(form, options)
   end
 end
