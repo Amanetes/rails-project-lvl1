@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 module HexletCode
+  autoload(:Input, 'hexlet_code/inputs/input')
+  autoload(:TextArea, 'hexlet_code/inputs/textarea')
+  autoload(:Submit, 'hexlet_code/inputs/submit')
   class Form
     attr_reader :record, :components
 
@@ -10,23 +13,22 @@ module HexletCode
     end
 
     def make_label(attribute_name)
-      label = Label.new(attribute_name)
-      @components << label.build
+      @components << Label.new(attribute_name)
     end
 
     def input(attribute_name, options = {})
       make_label(attribute_name)
       value = @record.public_send(attribute_name)
+      type = options[:as] || :string
       mapping = {
-        input: -> { Input.new(attribute_name, value, options) },
+        string: -> { Input.new(attribute_name, value, options) },
         text: -> { TextArea.new(attribute_name, value, options) }
       }
-      type = options[:as] || :input
-      @components << mapping[type].call.build
+      @components << mapping[type].call
     end
 
     def submit(value = 'Save')
-      @components << Tag.build('input', name: 'commit', type: 'submit', value: value)
+      @components << Submit.new('commit', value, type: 'submit')
     end
   end
 end

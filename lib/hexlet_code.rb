@@ -3,12 +3,12 @@
 require_relative 'hexlet_code/version'
 
 module HexletCode
-  autoload(:Tag, 'hexlet_code/tag.rb')
-  autoload(:FormBuilder, 'hexlet_code/form_builder.rb')
-  autoload(:Input, 'hexlet_code/input.rb')
-  autoload(:Label, 'hexlet_code/label.rb')
-  autoload(:TextArea, 'hexlet_code/textarea.rb')
-  autoload(:Form, 'hexlet_code/form.rb')
+  autoload(:Tag, 'hexlet_code/tag')
+  autoload(:FormBuilder, 'hexlet_code/form_builder')
+  autoload(:Form, 'hexlet_code/form')
+  autoload(:Inputs, 'hexlet_code/inputs')
+  autoload(:Label, 'hexlet_code/label')
+  autoload(:Submit, 'hexlet_code/inputs/submit')
 
   class Error < StandardError; end
 

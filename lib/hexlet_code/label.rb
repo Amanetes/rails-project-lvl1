@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 module HexletCode
-  autoload(:Tag, 'hexlet_code/tag')
-
   class Label
     attr_reader :attribute_name, :options
 

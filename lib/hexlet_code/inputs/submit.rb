@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 module HexletCode
-  autoload(:Tag, 'hexlet_code/tag')
-
-  class Input
+  class Submit
     attr_reader :attribute_name, :options, :value
 
     def initialize(attribute_name, value, options = {})
@@ -13,7 +11,7 @@ module HexletCode
     end
 
     def build
-      Tag.build('input', name: attribute_name, type: 'text', value: value)
+      Tag.build('input', name: attribute_name, type: 'submit', value: value)
     end
   end
 end
