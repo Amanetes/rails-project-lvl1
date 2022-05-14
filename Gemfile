@@ -7,6 +7,7 @@ ruby '3.0.1'
 gemspec
 
 group :production do
+  gem 'activesupport'
   gem 'rake'
 end
 
