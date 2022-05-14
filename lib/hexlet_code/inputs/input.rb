@@ -12,7 +12,11 @@ module HexletCode
       end
 
       def build
-        Tag.build('input', name: attribute_name, type: 'text', value: value)
+        default_options = { name: attribute_name,
+                            type: 'text',
+                            value: value }
+        updated_options = default_options.merge(options)
+        Tag.build('input', updated_options.except(:as))
       end
     end
   end
