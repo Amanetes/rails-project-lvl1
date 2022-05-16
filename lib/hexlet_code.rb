@@ -8,7 +8,6 @@ module HexletCode
   autoload(:Form, 'hexlet_code/form')
   autoload(:Inputs, 'hexlet_code/inputs')
   autoload(:Label, 'hexlet_code/label')
-  autoload(:Submit, 'hexlet_code/inputs/submit')
 
   class Error < StandardError; end
 
